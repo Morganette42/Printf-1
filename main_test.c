@@ -1,4 +1,4 @@
-#include "lib_printf.h"
+#include "includes/lib_printf.h"
 
 int main()
 {
@@ -41,45 +41,51 @@ int main()
     uint2 = 1234;
     uint3 = 12;
     uint4 = 23122;
-    printf("-------------- TEST CHAR ---------------\n\n");
-    
-    printf("ORIGINAL TEST   : %c : %c : %c : %c \n", 'c', 's', 'E', '0');
-    ft_printf("MY TEST      : %c : %c : %c : %c \n", 'c', 's', 'E', '0');
 
-    printf("-------------- TEST STRING ---------------\n\n");
+    printf("\n-------------- TEST CHAR ---------------\n\n");
+
+    printf("ORIGINAL TEST   : %c : %c : %c : %c \n", char1, char2, char3, char4);
+    ft_printf("MY TEST         : %c : %c : %c : %c \n", char1, char2, char3, char4);
+
+    printf("\n-------------- TEST STRING ---------------\n\n");
 
     printf("ORIGINAL TEST   : %s : %s : %s : %s \n", str1, str2, str3, str4);
-    ft_printf("MY TEST      : %s : %s : %s : %s \n", str1, str2, str3, str4);
+    ft_printf("MY TEST         : %s : %s : %s : %s \n", str1, str2, str3, str4);
 
-    printf("-------------- TEST POINTEUR ---------------\n\n");
+    printf("\n-------------- TEST POINTEUR ---------------\n\n");
 
     printf("ORIGINAL TEST   : %p : %p : %p : %p \n", &int1, &int2, &int3, &int4);
-    ft_printf("MY TEST      : %p : %p : %p : %p \n", &int1, &int2, &int3, &int4);
+    ft_printf("MY TEST         : %p : %p : %p : %p \n", &int1, &int2, &int3, &int4);
 
-    printf("-------------- TEST DECIMAL ---------------\n\n");
+    printf("\n-------------- TEST DECIMAL ---------------\n\n");
 
     printf("ORIGINAL TEST   : %d : %d : %d : %d \n", int1, int2, int3, int4);
-    ft_printf("MY TEST      : %d : %d : %d : %d \n", int1, int2, int3, int4);
+    ft_printf("MY TEST         : %d : %d : %d : %d \n", int1, int2, int3, int4);
 
-    printf("-------------- TEST INT ---------------\n\n");
+    printf("\n-------------- TEST INT ---------------\n\n");
 
     printf("ORIGINAL TEST   : %i : %i : %i : %i \n", int1, int2, int3, int4);
-    ft_printf("MY TEST      : %i : %i : %i : %i \n", int1, int2, int3, int4);
+    ft_printf("MY TEST         : %i : %i : %i : %i \n", int1, int2, int3, int4);
 
-    printf("-------------- TEST UNSIGNED INT ---------------\n\n");
+    printf("\n-------------- TEST UNSIGNED INT ---------------\n\n");
 
     printf("ORIGINAL TEST   : %u : %u : %u : %u \n", uint1, uint2, uint3, uint4);
-    ft_printf("MY TEST      : %u : %u : %u : %u \n", uint1, uint2, uint3, uint4);
+    ft_printf("MY TEST         : %u : %u : %u : %u \n", uint1, uint2, uint3, uint4);
 
-    printf("-------------- TEST HEXADECIMAL INT (lower case) ---------------\n\n");
+    printf("\n-------------- TEST HEXADECIMAL INT (lower case) ---------------\n\n");
 
     printf("ORIGINAL TEST   : %x : %x : %x : %x \n", uint1, uint2, uint3, uint4);
-    ft_printf("MY TEST      : %x : %x : %x : %x \n", uint1, uint2, uint3, uint4);
+    ft_printf("MY TEST         : %x : %x : %x : %x \n", uint1, uint2, uint3, uint4);
 
-    printf("-------------- TEST HEXADECIMAL INT (upper case) ---------------\n\n");
+    printf("\n-------------- TEST HEXADECIMAL INT (upper case) ---------------\n\n");
 
     printf("ORIGINAL TEST   : %X : %X : %X : %X \n", uint1, uint2, uint3, uint4);
-    ft_printf("MY TEST      : %X : %X : %X : %X \n", uint1, uint2, uint3, uint4);
+    ft_printf("MY TEST         : %X : %X : %X : %X \n", uint1, uint2, uint3, uint4);
+
+    printf("\n-------------- TEST NO %% (upper case) ---------------\n\n");
+
+    printf("ORIGINAL TEST : blableo iwealiuhfaloihfbal.fiq\n");
+    ft_printf("MY TEST       : blableo iwealiuhfaloihfbal.fiq\n");
 
     return (0);
 

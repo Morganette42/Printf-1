@@ -22,9 +22,10 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-void				ft_putchar(char c);
-void				ft_putstr(char *str);
-void				ft_putnbr(int nb);
+void				ft_putchar(const char c);
+void				ft_putstr(const char *str);
+void				ft_putnbr(long long int nb);
+void				ft_putnbr_unsigned(long long int nb);
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(char *s, size_t n);
@@ -48,7 +49,9 @@ size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 char				*ft_strnstr(const char *haystack,
 				const char *needle, size_t len);
-int					ft_atoi(const char *str);
+long long int		ft_atoi(const char *str);
+void				ft_putnbr_base(int nbr, char *base);
+void				ft_putnbr_unsigned(long long int nb);
 
 char				*ft_strdup(const char *src);
 void				*ft_calloc(size_t count, size_t size);

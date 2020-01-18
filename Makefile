@@ -1,29 +1,18 @@
-#################
-##  VARIABLES  ##
-#################
+SRC = srcs/ft_printf.c				\
+	  srcs/ft_parsing.c				\
+	  srcs/init_flags.c 			\
+	  srcs/ft_isflag.c				\
+	  srcs/display_functions_1.c	\
 
-#	Sources
+OBJS = ${SRC:.c=.o}
 
-SRC			=	
+INCLUDES = includes
 
-SRC_BONUS	=	
+LIBFT = Libft
 
+NAME = libftprintf.a
 
-#	Includes
-INCLUDES		=	lib_printf.h		
-
-#	Objects
-OBJS		= 	${SRC:.c=.o}
-
-OBJS_B		=	${SRC_BONUS:.c=.o}
-
-#	Output
-NAME		= 	lib_printf.a
-
-#	Compiler
-CFLAGS		=	-Werror -Wall -Wextra
-
-
+CFLAGS = -Wall -Werror -Wextra
 
 RM			= 	rm -rf
 
@@ -33,25 +22,23 @@ CC			= 	gcc
 
 ATTRIBUT 	= 	-c
 
-#	Rules
+all: ${NAME}
 
-all:			${NAME} bonus
+-c.o:	${CC} ${CFLAGS} ${ATTRIBUT} $< -o $(<:.c=.o) -I${INCLUDES}
 
--c.o:			
-				${CC} ${CFLAGS} ${ATTRIBUT} $< -o $(<:.c=.o) -I${INCLUDES}
+$(NAME): ${OBJS}
+	make -C ${LIBFT}
+	cp Libft/libft.a ./$(NAME)
+	ar -rcs ${NAME} ${OBJS}
 
-${NAME}:		${OBJS}
-				${AR} ${NAME} ${OBJS}
+clean:
+	rm -f ${OBJS}
+	make clean -C ${LIBFT}
 
-clean:			
-				${RM} ${OBJS} ${OBJS_B}
+fclean : clean
+	rm -f ${NAME}
+	make fclean -C ${LIBFT}
 
-fclean:			clean
-				${RM} ${NAME}
+re: fclean all
 
-re:				fclean all
-
-bonus:			${OBJS} ${OBJS_B}
-				${AR} ${NAME} ${OBJS} ${OBJS_B}
-
-.PHONY:			all clean fclean re bonus
+.PHONY: clean all fclean re

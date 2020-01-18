@@ -39,8 +39,12 @@ SRC			=	ft_atoi.c    			\
 				ft_tolower.c 			\
 				ft_toupper.c 			\
 				ft_strnstr.c 			\
-
-SRC_BONUS	=	ft_lstnew.c		\
+				ft_putchar.c			\
+				ft_putstr.c				\
+				ft_putnbr.c				\
+				ft_putnbr_base.c		\
+				ft_putnbr_unsigned.c	\
+				ft_lstnew.c		\
 				ft_lstsize.c		\
 				ft_lstadd_front.c	\
 				ft_lstadd_back.c	\
@@ -56,8 +60,6 @@ INCLUDES		=	libft.h
 
 #	Objects
 OBJS		= 	${SRC:.c=.o}
-
-OBJS_B		=	${SRC_BONUS:.c=.o}
 
 #	Output
 NAME		= 	libft.a
@@ -77,7 +79,7 @@ ATTRIBUT 	= 	-c
 
 #	Rules
 
-all:			${NAME} bonus
+all:			${NAME} 
 
 -c.o:			
 				${CC} ${CFLAGS} ${ATTRIBUT} $< -o $(<:.c=.o) -I${INCLUDES}
@@ -86,14 +88,11 @@ ${NAME}:		${OBJS}
 				${AR} ${NAME} ${OBJS}
 
 clean:			
-				${RM} ${OBJS} ${OBJS_B}
+				${RM} ${OBJS}
 
 fclean:			clean
 				${RM} ${NAME}
 
 re:				fclean all
 
-bonus:			${OBJS} ${OBJS_B}
-				${AR} ${NAME} ${OBJS} ${OBJS_B}
-
-.PHONY:			all clean fclean re bonus
+.PHONY:			all clean fclean re
