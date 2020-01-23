@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putlstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julpelle <julpelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/21 14:13:18 by julpelle          #+#    #+#             */
-/*   Updated: 2020/01/21 14:49:28 by julpelle         ###   ########.fr       */
+/*   Created: 2020/01/21 14:44:28 by julpelle          #+#    #+#             */
+/*   Updated: 2020/01/21 14:47:46 by julpelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_putchar(char c, t_flags *flags)
+void		ft_putlstr(char *str, int len, t_flags *flags)
 {
-	write(1, &c, 1);
-	flags->ret++;
+	while (*str && len > 0)
+	{
+		ft_putchar(*str, flags);
+		len--;
+		str++;
+	}
 }

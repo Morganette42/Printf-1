@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_flags.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: julpelle <julpelle@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/01/21 11:32:57 by julpelle          #+#    #+#             */
+/*   Updated: 2020/01/21 15:05:50 by julpelle         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/lib_printf.h"
 
 void    ft_init_flags(t_flags *flags)
@@ -11,4 +23,3 @@ void    ft_init_flags(t_flags *flags)
     flags->precision = 0;
     flags->ret = 0;
 }
-

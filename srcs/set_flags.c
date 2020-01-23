@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   set_flags.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: julpelle <julpelle@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/01/21 11:33:07 by julpelle          #+#    #+#             */
+/*   Updated: 2020/01/21 13:45:31 by julpelle         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/lib_printf.h"
 
 int		ft_dashzero(const char *str, int pos, t_flags *flags, int nbr)
@@ -21,54 +33,54 @@ int		ft_dashzero(const char *str, int pos, t_flags *flags, int nbr)
 	return (nbr);
 }
 
-int     ft_precision(const char *str, int pos, t_flags *flags)
+int		ft_precision(const char *str, int pos, t_flags *flags)
 {
-    pos += 1;
-    if (ft_isdigit(str[pos]) == 1)
-    {
-        flags->precision = ft_atoi(&str[pos]);
-        while (ft_isdigit(str[pos]) == 1)
-            pos++;
-    }
-    return (pos);
+	pos += 1;
+	if (ft_isdigit(str[pos]) == 1)
+	{
+		flags->precision = ft_atoi(&str[pos]);
+		while (ft_isdigit(str[pos]) == 1)
+			pos++;
+	}
+	return (pos);
 }
 
-int     ft_width(const char *str, int pos, t_flags *flags)
+int		ft_width(const char *str, int pos, t_flags *flags)
 {
-    pos += 1;
-    if (ft_isdigit(str[pos]) == 1)
-    {
-        flags->width = ft_atoi(&str[pos]);
-        while (ft_isdigit(str[pos]) == 1)
-            pos++;
-    }
-    return (pos);
+	pos += 1;
+	if (ft_isdigit(str[pos]) == 1)
+	{
+		flags->width = ft_atoi(&str[pos]);
+		while (ft_isdigit(str[pos]) == 1)
+			pos++;
+	}
+	return (pos);
 }
 
-/*
-void    ft_search_flags(const char *str, int pos, t_flags *flags)
+int		search_flags(va_list va, const char *str, int pos, t_flags *flags)
 {
-    char *test;
-    int i;
-    int var;
-    char    converter;
-
-    i = 0;
-    while (str[i] && ft_is_converter(str[i]) != 1)
-    {
-        printf("Valeur de i : %d\n", i);
-        if (str[i] == '0' || str[i] == '.' || str[i] == '*' 
-            || str[i] == '-')
-        {
-            i += 1;
-            var = ft_atoi(&str[i]);
-            printf("Atoi : %d\n", var);
-            while (ft_isdigit(str[i]))
-                i++;
-        }
-        else
-            i++;
-    }
-    converter = str[i];
+	if (ft_isdigit(str[pos]) && str[pos] != '0')
+		pos = ft_digitflags(str, pos, flags);
+	if (!(is_flag(str, pos)))
+	{
+		if (str[pos] == '0' || str[pos] == '-' || str[pos] == '.')
+			flags->flag = 1;
+		if (str[pos] == '0')
+			flags->zero = 1;
+		if (str[pos] == '-')
+			flags->dash = 1;
+		if (str[pos] == '0' || str[pos] == '-')
+			pos = ft_width(str, pos, flags);
+		if (str[pos] == '.')
+		{
+			flags->dot = 1;
+			pos = ft_precision(str, pos, flags);
+		}
+		if (str[pos] == '*')
+		{
+			flags->star = 1;
+			pos = ft_star(va, str, pos, flags);
+		}
+	}
+	return (pos);
 }
-*/

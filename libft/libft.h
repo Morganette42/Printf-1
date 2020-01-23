@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: julpelle <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: julpelle <julpelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 14:20:39 by julpelle          #+#    #+#             */
-/*   Updated: 2019/12/12 11:11:53 by julpelle         ###   ########.fr       */
+/*   Updated: 2020/01/21 14:49:44 by julpelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include "../includes/lib_printf.h"
 
 typedef struct		s_list
 {
@@ -22,10 +23,9 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-void				ft_putchar(const char c);
-void				ft_putstr(const char *str);
-void				ft_putnbr(long long int nb);
-void				ft_putnbr_unsigned(long long int nb);
+void				ft_putchar(char c, t_flags *flags);
+void				ft_putlstr(char *str, int len, t_flags *flags);
+void				ft_putnbr(int n, t_flags *flags);
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(char *s, size_t n);
@@ -49,9 +49,7 @@ size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 char				*ft_strnstr(const char *haystack,
 				const char *needle, size_t len);
-long long int		ft_atoi(const char *str);
-void				ft_putnbr_base(int nbr, char *base);
-void				ft_putnbr_unsigned(long long int nb);
+int					ft_atoi(const char *str);
 
 char				*ft_strdup(const char *src);
 void				*ft_calloc(size_t count, size_t size);

@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_is_converter.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julpelle <julpelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/21 14:13:18 by julpelle          #+#    #+#             */
-/*   Updated: 2020/01/21 14:49:28 by julpelle         ###   ########.fr       */
+/*   Created: 2020/01/21 13:28:04 by julpelle          #+#    #+#             */
+/*   Updated: 2020/01/21 15:05:28 by julpelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/lib_printf.h"
 
-void		ft_putchar(char c, t_flags *flags)
+int ft_is_converter(const char *str, int pos)
 {
-	write(1, &c, 1);
-	flags->ret++;
+	if (str[pos] == 'c' || str[pos] == 's' || str[pos] == 'p' || str[pos] == 'd'
+			|| str[pos] == 'i' || str[pos] == 'u')
+		return (1);
+	else
+		return (0);
 }

@@ -2,7 +2,17 @@ SRC = srcs/ft_printf.c				\
 	  srcs/ft_parsing.c				\
 	  srcs/init_flags.c 			\
 	  srcs/ft_isflag.c				\
-	  srcs/display_functions_1.c	\
+	  srcs/ft_display_c.c			\
+	  srcs/ft_display_cx.c			\
+	  srcs/ft_display_id.c			\
+	  srcs/ft_display_p.c			\
+	  srcs/ft_display_perc.c		\
+	  srcs/ft_display_s.c			\
+	  srcs/ft_display_u.c			\
+	  srcs/ft_display_x.c			\
+	  srcs/ft_is_converter.c		\
+	  srcs/ft_isflag.c				\
+	  srcs/set_flags.c				\
 
 OBJS = ${SRC:.c=.o}
 
