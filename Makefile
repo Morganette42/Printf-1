@@ -13,6 +13,13 @@ SRC = srcs/ft_printf.c				\
 	  srcs/ft_is_converter.c		\
 	  srcs/ft_isflag.c				\
 	  srcs/set_flags.c				\
+	  srcs/ft_putchar.c				\
+	  srcs/ft_putnbr_base.c			\
+	  srcs/ft_strlen_hexa.c			\
+	  srcs/ft_putnbr.c				\
+	  srcs/ft_putstr.c				\
+	  srcs/ft_putunbr.c				\
+	  srcs/ft_digit_is_flag.c		\
 
 OBJS = ${SRC:.c=.o}
 
