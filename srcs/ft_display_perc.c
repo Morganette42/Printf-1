@@ -6,11 +6,11 @@
 /*   By: julpelle <julpelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 13:29:31 by julpelle          #+#    #+#             */
-/*   Updated: 2020/01/21 15:03:55 by julpelle         ###   ########.fr       */
+/*   Updated: 2020/02/18 15:39:50 by julpelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../includes/lib_printf.h"
 
 void	flags_percent(t_flags *flags)
 {

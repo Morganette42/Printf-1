@@ -6,7 +6,7 @@
 /*   By: julpelle <julpelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 11:33:07 by julpelle          #+#    #+#             */
-/*   Updated: 2020/01/21 13:45:31 by julpelle         ###   ########.fr       */
+/*   Updated: 2020/02/18 15:46:27 by julpelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,26 @@ int		ft_precision(const char *str, int pos, t_flags *flags)
 	return (pos);
 }
 
+int		ft_star(va_list va, const char *str, int pos, t_flags *flags)
+{
+	int		nbr;
+
+	nbr = va_arg(va, int);
+	if (str[pos - 1] == '0' || str[pos - 1] == '-' || str[pos - 1] == '.')
+		nbr = ft_dashzero(str, pos, flags, nbr);
+	else
+	{
+		if (nbr < 0)
+		{
+			flags->dash = 1;
+			flags->flag = 1;
+			nbr = -nbr;
+		}
+		flags->width = nbr;
+	}
+	return (pos + 1);
+}
+
 int		ft_width(const char *str, int pos, t_flags *flags)
 {
 	pos += 1;
@@ -61,7 +81,7 @@ int		search_flags(va_list va, const char *str, int pos, t_flags *flags)
 {
 	if (ft_isdigit(str[pos]) && str[pos] != '0')
 		pos = ft_digitflags(str, pos, flags);
-	if (!(is_flag(str, pos)))
+	if (!(ft_is_flag(str, pos)))
 	{
 		if (str[pos] == '0' || str[pos] == '-' || str[pos] == '.')
 			flags->flag = 1;

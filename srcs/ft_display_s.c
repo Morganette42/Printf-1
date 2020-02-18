@@ -6,11 +6,11 @@
 /*   By: julpelle <julpelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 13:30:12 by julpelle          #+#    #+#             */
-/*   Updated: 2020/01/21 15:04:01 by julpelle         ###   ########.fr       */
+/*   Updated: 2020/02/18 15:40:00 by julpelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../includes/lib_printf.h"
 
 void	ft_dot_s(char *str, t_flags *flags)
 {

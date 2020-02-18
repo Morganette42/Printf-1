@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_converter.c                                  :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julpelle <julpelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/21 13:28:04 by julpelle          #+#    #+#             */
-/*   Updated: 2020/02/18 16:33:27 by julpelle         ###   ########.fr       */
+/*   Created: 2020/02/18 15:36:54 by julpelle          #+#    #+#             */
+/*   Updated: 2020/02/18 15:38:14 by julpelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/lib_printf.h"
 
-int ft_is_converter(const char *str, int pos)
+void		ft_putnbr(int n, t_flags *flags)
 {
-	if (str[pos] == 'c' || str[pos] == 's' || str[pos] == 'p' || str[pos] == 'd'
-			|| str[pos] == 'i' || str[pos] == 'u' || str[pos] == 'x' 
-			|| str[pos] == 'X')
-		return (1);
+	unsigned int	nbr;
+
+	if (n < 0)
+		nbr = n * -1;
 	else
-		return (0);
+		nbr = n;
+	if (n / 10)
+		ft_putnbr(nbr / 10, flags);
+	ft_putchar(((nbr % 10) + 48), flags);
 }

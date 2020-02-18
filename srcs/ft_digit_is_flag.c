@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_converter.c                                  :+:      :+:    :+:   */
+/*   ft_digit_is_flag.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julpelle <julpelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/21 13:28:04 by julpelle          #+#    #+#             */
-/*   Updated: 2020/02/18 16:33:27 by julpelle         ###   ########.fr       */
+/*   Created: 2020/02/18 15:43:35 by julpelle          #+#    #+#             */
+/*   Updated: 2020/02/18 15:51:30 by julpelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/lib_printf.h"
 
-int ft_is_converter(const char *str, int pos)
+int		ft_digitflags(const char *str, int pos, t_flags *flags)
 {
-	if (str[pos] == 'c' || str[pos] == 's' || str[pos] == 'p' || str[pos] == 'd'
-			|| str[pos] == 'i' || str[pos] == 'u' || str[pos] == 'x' 
-			|| str[pos] == 'X')
-		return (1);
-	else
-		return (0);
+	flags->width = ft_atoi(&str[pos]);
+	while (ft_isdigit(str[pos]))
+		pos++;
+	return (pos);
 }

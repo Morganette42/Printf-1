@@ -6,7 +6,7 @@
 /*   By: julpelle <julpelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 11:32:57 by julpelle          #+#    #+#             */
-/*   Updated: 2020/01/21 15:05:50 by julpelle         ###   ########.fr       */
+/*   Updated: 2020/02/18 15:28:01 by julpelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ void    ft_init_flags(t_flags *flags)
     flags->width = 0;
     flags->precision = 0;
     flags->ret = 0;
+    flags->len = 0;
 }
