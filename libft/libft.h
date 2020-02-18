@@ -6,7 +6,7 @@
 /*   By: julpelle <julpelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 14:20:39 by julpelle          #+#    #+#             */
-/*   Updated: 2020/01/21 14:49:44 by julpelle         ###   ########.fr       */
+/*   Updated: 2020/02/18 15:26:18 by julpelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,6 @@ typedef struct		s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
-
-void				ft_putchar(char c, t_flags *flags);
-void				ft_putlstr(char *str, int len, t_flags *flags);
-void				ft_putnbr(int n, t_flags *flags);
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(char *s, size_t n);

@@ -6,7 +6,7 @@
 /*   By: julpelle <julpelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 10:34:28 by julpelle          #+#    #+#             */
-/*   Updated: 2020/01/21 15:02:30 by julpelle         ###   ########.fr       */
+/*   Updated: 2020/02/18 16:05:06 by julpelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,15 @@
 
 typedef struct	s_flags
 {
-	int		flag;
-	int		dash;
-	int		zero;
-	int		dot;
-	int		star;
-	int		width;
-	int		precision;
-	int		ret;
+	int			flag;
+	int			dash;
+	int			zero;
+	int			dot;
+	int			star;
+	int			width;
+	int			precision;
+	int			len;
+	int			ret;
 }				t_flags;
 
 void			ft_putnbr_base(int nbr, char *base);
@@ -60,7 +61,15 @@ void			ft_dot_x(unsigned long int nbr, t_flags *flags, char *base
 				, int len);
 void			flags_x(unsigned long int nbr, t_flags *flags, char *base
 				, int len);
-unsigned int	unsigned_func_c(int n);			
+unsigned int	unsigned_func_c(int n);
+void			ft_putchar(char c, t_flags *flags);
+int				ft_strlen_basehexa(unsigned long int n, char *base, t_flags *flags,
+			int len);
+void			ft_putnbr_basehexa(unsigned long int n, char *base, t_flags *flags);
+void			ft_putnbr(int n, t_flags *flags);
+void			ft_putstr(char *str, t_flags *flags);
+void			ft_putunbr(unsigned int n, t_flags *flags);
+int				ft_digitflags(const char *str, int pos, t_flags *flags);
 
 
 int    			ft_dispatch_conversion(const char *str, int pos,
@@ -77,5 +86,6 @@ int				ft_x(int n, int pos, t_flags *flags);
 int				ft_dashzero(const char *str, int pos, t_flags *flags, int nbr);
 int				ft_precision(const char *str, int pos, t_flags *flags);
 int				ft_width(const char *str, int pos, t_flags *flags);
+int				ft_star(va_list va, const char *str, int pos, t_flags *flags);
 
 #endif

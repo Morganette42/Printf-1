@@ -39,9 +39,6 @@ SRC			=	ft_atoi.c    			\
 				ft_tolower.c 			\
 				ft_toupper.c 			\
 				ft_strnstr.c 			\
-				ft_putchar.c			\
-				ft_putlstr.c				\
-				ft_putnbr.c				\
 
 SRC_BONUS	=	ft_lstnew.c		\
 				ft_lstsize.c		\

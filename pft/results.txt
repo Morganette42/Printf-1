@@ -1,0 +1,63 @@
+WARNING: The return values reported here may be bugged on some systems.
+          See https://github.com/gavinfielder/pft/issues/11
+          Run in non-fork mode (-X) to ensure accurate return value
+          reporting, set IGNORE_RETURN_VALUE=1 in options-config.ini,
+          or run test_pipes.sh to see if your system has this bug.
+          This bug does not affect the pass/fail result of a test, nor
+          the function output--only the reported return value.
+
+
+Test 139 (d_basic_pos) : FAILED.
+    First line of code: {return test("this %d number", 17);}
+      expected return value : 15
+      your return value     : 9
+      expected output : "this 17 number"
+      your output     : "this 17 number"
+      expected (nonprintable as hex) : "this 17 number"
+      actual   (nonprintable as hex) : "this 17 number"
+
+Test 140 (d_basic_neg) : FAILED.
+    First line of code: {return test("this %d number", -267);}
+      expected return value : 17
+      your return value     : 12
+      expected output : "this -267 number"
+      your output     : "this -267 number"
+      expected (nonprintable as hex) : "this -267 number"
+      actual   (nonprintable as hex) : "this -267 number"
+
+Test 141 (d_basic_zero) : FAILED.
+    First line of code: {return test("this %d number", 0);}
+      expected return value : 14
+      your return value     : 8
+      expected output : "this 0 number"
+      your output     : "this 0 number"
+      expected (nonprintable as hex) : "this 0 number"
+      actual   (nonprintable as hex) : "this 0 number"
+
+Test 214 (d_basic_i_pos) : FAILED.
+    First line of code: {return test("this %d number", 17);}
+      expected return value : 15
+      your return value     : 9
+      expected output : "this 17 number"
+      your output     : "this 17 number"
+      expected (nonprintable as hex) : "this 17 number"
+      actual   (nonprintable as hex) : "this 17 number"
+
+Test 215 (d_basic_i_neg) : FAILED.
+    First line of code: {return test("this %d number", -267);}
+      expected return value : 17
+      your return value     : 12
+      expected output : "this -267 number"
+      your output     : "this -267 number"
+      expected (nonprintable as hex) : "this -267 number"
+      actual   (nonprintable as hex) : "this -267 number"
+
+Test 216 (d_basic_i_zero) : FAILED.
+    First line of code: {return test("this %d number", 0);}
+      expected return value : 14
+      your return value     : 8
+      expected output : "this 0 number"
+      your output     : "this 0 number"
+      expected (nonprintable as hex) : "this 0 number"
+      actual   (nonprintable as hex) : "this 0 number"
+
