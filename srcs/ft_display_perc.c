@@ -6,7 +6,7 @@
 /*   By: julpelle <julpelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 13:29:31 by julpelle          #+#    #+#             */
-/*   Updated: 2020/02/18 15:39:50 by julpelle         ###   ########.fr       */
+/*   Updated: 2020/02/19 18:25:27 by julpelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,15 @@ void	flags_percent(t_flags *flags)
 
 int		ft_display_perc(int pos, t_flags *flags)
 {
+	/*
+	printf("TEST DASH : %d\n", flags->dash);
+	printf("TEST ZERO : %d\n", flags->zero);
+	printf("TEST DOT : %d\n", flags->dot);
+	printf("TEST STAR : %d\n", flags->star);
+	printf("TEST WIDTH : %d\n", flags->width);
+	printf("TEST PREC : %d\n", flags->precision);
+	printf("TEST LEN : %d\n", flags->len);
+	*/
 	if (flags->flag > 0)
 		flags_percent(flags);
 	else
