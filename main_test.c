@@ -50,6 +50,7 @@ int main()
     uint3 = 12;
     uint4 = 23141234122;
 
+    /*
     printf(YEL"\n============== TEST CHAR ===============\n\n");
 
     printf(MAG"ORIGINAL TEST\t"YEL": %c : %c : %c : %c \n", char1, char2, char3, char4);
@@ -96,8 +97,76 @@ int main()
     ft_printf(MAG"MY TEST\t\t"YEL": blableo iwealiuhfaloihfbal.fiq\n");
 
     printf("\n============== ADDITIONAL TESTS ===============\n\n");
+    int a;
 
-    
+    a = printf(NRM"%%");
+    ft_printf(YEL"%%");
+    printf("A : %d\n\n", a);
+
+    a = printf(NRM"%5%");
+    ft_printf(YEL"%5%");
+    printf("A : %d\n\n", a);
+
+    a = printf(NRM"%-5%");
+    ft_printf(YEL"%-5%");
+    printf("A : %d\n\n", a);
+
+    a = printf(NRM"%05%");
+    ft_printf(YEL"%05%");
+    printf("A : %d\n\n", a);
+
+    a = printf(NRM"%-05%");
+    ft_printf(YEL"%-05%");
+    printf("A : %d\n\n", a);
+
+
+    ft_printf("%d\n", ft_printf("1hexa-maj 1 %X hexa-maj 2 %X\n", 42, -42));
+    printf("1hexa-maj 1 %X hexa-maj 2 %X\n", 42, -42);
+    printf("\n");
+    ft_printf("%d\n", ft_printf("4hexa-maj 1 %12X hexa-maj 2 %int12X\n", 42, -42));
+    printf("4hexa-maj 1 %12X hexa-maj 2 %int12X\n", 42, -42);
+    printf("\n");
+    ft_printf("%d\n", ft_printf("4hexa-maj 1 %-12X hexa-maj 2 %-12X\n", 42, -42));
+    printf("4hexa-maj 1 %-12X hexa-maj 2 %-12X\n", 42, -42);
+    printf("\n");
+    ft_printf("%d\n", ft_printf("5hexa-maj 1 %0X hexa-maj 2 %0X\n", 42, -42));
+    printf("5hexa-maj 1 %0X hexa-maj 2 %0X\n", 42, -42);
+    printf("\n");
+    ft_printf("%d\n", ft_printf("6hexa-maj 1 %012X hexa-maj 2 %012X\n", 42, -42));
+    printf("6hexa-maj 1 %012X hexa-maj 2 %012X\n", 42, -42);
+    printf("\n");
+    ft_printf("%d\n", ft_printf("8hexa-maj 1 %*X hexa-maj 2 %*X\n", 42, 6, 6, 6));
+    printf("8hexa-maj 1 %*X hexa-maj 2 %*X\n", 42, 6, 6, 6);
+    printf("\n");
+    ft_printf("%d\n", ft_printf("1unsigned 1 %u unsigned 2 %u\n", 42, -42));
+    printf("1unsigned 1 %u unsigned 2 %u\n", 42, -42);
+    printf("\n");
+    */
+
+    ft_printf("%d\n", ft_printf("4unsigned 1 %12u unsigned 2 %12u\n", 42, -42));
+    printf("4unsigned 1 %12u unsigned 2 %12u\n", 42, -42);
+    printf("\n");
+    ft_printf("%d\n", ft_printf("4unsigned 1 %-12u unsigned 2 %-12u\n", 42, -42));
+    printf("4unsigned 1 %-12u unsigned 2 %-12u\n", 42, -42);
+    printf("\n");
+    ft_printf("%d\n", ft_printf("5unsigned 1 %0u unsigned 2 %0u\n", 42, -42));
+     printf("5unsigned 1 %0u unsigned 2 %0u\n", 42, -42);
+    printf("\n");
+    ft_printf("%d\n", ft_printf("6unsigned 1 %012u unsigned 2 %012u\n", 42, -42));
+    printf("6unsigned 1 %012u unsigned 2 %012u\n", 42, -42);
+    printf("\n");
+    ft_printf("%d\n", ft_printf("8unsigned 1 %*u unsigned 2 %*u\n", 42, 6, 6, 6));
+    printf("8unsigned 1 %*u unsigned 2 %*u\n", 42, 6, 6, 6);
+    printf("\n");
+    ft_printf("%d\n", ft_printf("15unsigned 1 %.u unsigned 2 %.u\n", 42, -42));
+    printf("15unsigned 1 %.u unsigned 2 %.u\n", 42, -42);
+    printf("\n");
+    printf("\n");
+    printf("\n");
+
+    printf("%");
+    ft_printf("%");
+
+
     return (0);
-
 }

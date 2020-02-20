@@ -6,7 +6,7 @@
 /*   By: julpelle <julpelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 10:34:28 by julpelle          #+#    #+#             */
-/*   Updated: 2020/02/18 16:05:06 by julpelle         ###   ########.fr       */
+/*   Updated: 2020/02/20 17:22:24 by julpelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ typedef struct	s_flags
 void			ft_putnbr_base(int nbr, char *base);
 void			ft_putnbr_unsigned(long long int nb);
 int				ft_is_flag(const char *str, int pos);
-int     		ft_is_converter(const char *str, int pos);
-void    		ft_init_flags(t_flags *flags);
-
-int				search_flags(va_list va, const char *str, int pos, t_flags *flags);
+int				ft_is_converter(const char *str, int pos);
+void			ft_init_flags(t_flags *flags);
+int				search_flags(va_list va, const char *str, int pos
+				, t_flags *flags);
 void			flags_c(char c, t_flags *flags);
 void			ft_dot_cx(unsigned long int nbr, t_flags *flags, char *base
 				, int len);
@@ -63,16 +63,16 @@ void			flags_x(unsigned long int nbr, t_flags *flags, char *base
 				, int len);
 unsigned int	unsigned_func_c(int n);
 void			ft_putchar(char c, t_flags *flags);
-int				ft_strlen_basehexa(unsigned long int n, char *base, t_flags *flags,
-			int len);
-void			ft_putnbr_basehexa(unsigned long int n, char *base, t_flags *flags);
+int				ft_strlen_basehexa(unsigned long int n, char *base
+				, t_flags *flags
+				, int len);
+void			ft_putnbr_basehexa(unsigned long int n, char *base
+				, t_flags *flags);
 void			ft_putnbr(int n, t_flags *flags);
 void			ft_putstr(char *str, t_flags *flags);
 void			ft_putunbr(unsigned int n, t_flags *flags);
 int				ft_digitflags(const char *str, int pos, t_flags *flags);
-
-
-int    			ft_dispatch_conversion(const char *str, int pos,
+int				ft_dispatch_conversion(const char *str, int pos,
 				va_list params, t_flags *flags);
 int				ft_display_c(int c, int pos, t_flags *flags);
 int				ft_cx(int n, int pos, t_flags *flags);

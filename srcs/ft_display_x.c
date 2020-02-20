@@ -6,18 +6,18 @@
 /*   By: julpelle <julpelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 13:30:45 by julpelle          #+#    #+#             */
-/*   Updated: 2020/02/18 16:37:46 by julpelle         ###   ########.fr       */
+/*   Updated: 2020/02/20 16:12:05 by julpelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/lib_printf.h"
 
-void			ft_dot_x(unsigned long int nbr, t_flags *flags, char *base,
-			 int len)
+void			ft_dot_x(unsigned long int nbr, t_flags *flags, char *base
+				, int len)
 {
 	int		lenbis;
 	int		tmp;
-	
+
 	tmp = flags->precision;
 	lenbis = len;
 	lenbis = ft_strlen_basehexa(nbr, base, flags, lenbis);
@@ -69,7 +69,6 @@ int				ft_x(int n, int pos, t_flags *flags)
 	unsigned int		nb;
 
 	len = 0;
-
 	nb = unsigned_func_c(n);
 	ft_strlcpy(base, "0123456789abcdef", 17);
 	flags->len = ft_strlen_basehexa(nb, base, flags, len);
